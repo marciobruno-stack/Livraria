@@ -1,21 +1,19 @@
 public class ComparandoReferencias {
     public static void main(String[] args) {
 
-        Autor autor = new Autor();
-        autor.nome = "Rodrigo Turina";
-        autor.email = "rodrigo.turini@caelum.com.br";
-        autor.cpf = "123.456.789-10";
+        Livro livro = new Livro();
+        livro.adicionaValor(59.90);
 
-        Autor autor2 = new Autor();
-        autor2.nome = "Rodrigo Turina";
-        autor2.email = "rodrigo.turini@caelum.com.br";
-        autor2.cpf = "123.456.789-10";
+        // Mostra o valor inicial
+        System.out.println("Valor atual: " + livro.retornaValor());
 
-        if (autor == autor2){
-            System.out.println("Iguais, mesmo autor!");
+        // Tenta aplicar um desconto de 4%
+        if (livro.aplicarDescontoDe(0.04)) {
+            System.out.println("Desconto aplicado com sucesso!");
+            // Exibe o valor com o desconto aplicado
+            System.out.println("Valor com desconto: " + livro.retornaValor());
         } else {
-            System.out.println("Hein, Por que diferentes?");
+            System.out.println("Desconto não pode ser maior que 30%");
         }
     }
-
 }
